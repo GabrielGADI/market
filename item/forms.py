@@ -4,6 +4,7 @@ from .models import Item
 
 INPUT_CLASSES = 'w-100 py-2 px-3 rounded-xl border'
 
+
 class NewItemForm(forms.ModelForm):
     class Meta:
         model = Item
@@ -26,11 +27,12 @@ class NewItemForm(forms.ModelForm):
             }),
         }
 
+
 class EditItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ('name', 'description', 'price', 'image', 'is_sold')
-        widgets ={
+        widgets = {
             'name': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
             }),
